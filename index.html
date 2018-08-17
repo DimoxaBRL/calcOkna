@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Расчет</title>
+	<link rel="shortcut icon" href="/calc_in/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/calc_in/favicon.ico" type="image/x-icon">	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="none"/>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+
+	<div id="notifies"></div>
+	<div class="container back">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+					<li class="nav-item" style="cursor: not-allowed;">
+						<a class="nav-link active" data-toggle="tab" href="#menu1">Расчеты</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#home">Изделия</a>
+					</li>
+					<li class="nav-item" style="cursor: not-allowed;">
+						<a class="nav-link" data-toggle="tab" href="#menu2" style="pointer-events: none;">Следующий проект</a>
+					</li>
+				</ul>
+
+				<div class="tab-content">
+
+					<div class="tab-pane container active" id="menu1">
+						<a href="#" id="addNewitem">Добавить изделие</a> 
+						<div class="container">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Цена установленная</label>
+										<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g6" placeholder="0" value="1000" >
+									</div>	
+								</div>									
+							</div>
+
+							<br>
+							<div  id="pPrint">
+								<div class="row">
+									<div class="col-md-6">
+
+										<div class="row hh">
+											<div class="col-md-6">
+
+											</div>
+											<div class="col-md-3">
+												ОКНА
+											</div>
+											<div class="col-md-3">
+												РАМА
+											</div>
+										</div>
+
+										<div class="row hh">
+											<div class="col-md-6">
+												Надбавка на изделие
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c3" placeholder="0" value="92" readonly>
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c4" placeholder="0" value="92" readonly>
+											</div>		
+										</div>
+										<div class="row hh">
+											<div class="col-md-6">
+												Цена изготовителя
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c1" placeholder="0" value="0" >
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c2" placeholder="0" value="0" >
+											</div>		
+										</div>
+
+
+										<div class="row hh">
+											<div class="col-md-6">
+												Месяц рассрочки
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c5" placeholder="90%" value="0" >
+											</div>
+											<div class="col-md-3">
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="c6" placeholder="90%" value="0" >
+											</div>		
+										</div>
+									</div>
+								</div>
+								<div class="container">
+											<table class="table">
+											    <tr>
+											        <td id="id">Цена для клиента расчетная</td>
+											        <td id="id1"> </td>
+											        <td id="id2"> </td>
+											        <td id="id3">0.00</td>
+											        <td id="id4">0.00</td>
+											        <td id="id5">0.00</td>
+											    </tr>
+											    <tr>
+											        <td>Скидка за объем</td>
+											        <td id="id6">0.00</td>
+											        <td id="id7"> </td>
+											        <td id="id8">0.00</td>
+											        <td id="id9">0.00</td>
+											        <td id="id10">0.00</td>
+											    </tr>
+											    <tr>
+											        <td>Скидка за рассрочку</td>
+											        <td id="id11">0.00</td>
+											        <td id="id12">0.00</td>
+											        <td id="id13">0.00</td>
+											        <td id="id14">0.00</td>
+											        <td id="id15">0.00</td>
+											    </tr>
+											    <tr>
+											        <td>Надбавка</td>
+											        <td id="id16">0.00</td>
+											        <td></td>
+											        <td></td>
+											        <td></td>
+											        <td id="id20">0.00</td>
+											    </tr>
+
+											    <tr>
+											        <td>Сумма Монтаж</td>
+											        <td>Сумма Откосы</td>
+											        <td>Сумма Допы</td>
+											        <td>Сумма Дорога</td>
+													<td></td>
+													<td></td>
+											    </tr>
+											    <tr>
+											        <td id="id25">0.00</td>
+											        <td id="id26">0.00</td>
+											        <td id="id27">0.00</td>
+											        <td id="id28">0.00</td>
+													<td> </td>
+													<td> </td>
+
+											    </tr>
+
+
+
+											    <tr>
+											        <td>Итог</td>
+											        <td id="id21">0.00</td>
+											        <td> </td>
+											        <td>Разница с ценой </td>
+											        <td id="id22"> </td>
+
+											    </tr>
+
+
+
+											</table>	
+								</div>
+
+
+
+								<div  id="coppyBufer" class="row">
+
+									<div class="width20">Отклонение<br><input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g1" placeholder="0" value="0" readonly></div>
+									<div class="width20"><br>Новый</div>
+									<div class="width20">Монтаж<br><input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g2" placeholder="0" value="0" readonly></div>
+									<div class="width20">Откосы<br><input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g3" placeholder="0" value="0" readonly></div>
+									<div class="width20">Допы<br><input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g4" placeholder="0" value="0" readonly></div>
+									<div class="width20">Дорога<br><input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="g5" placeholder="0" value="0" ></div>
+
+								</div>
+							</div>
+
+
+
+							<div class="inLineblock">
+								<button onclick="newSum();" type="submit" name="order_submit" id="add1" class="btn btn-primary add">Расчитать</button>
+								<button onclick="CopyToClipboard();" type="submit" name="order_submit" id="add1" class="btn btn-primary add">Копировать</button>
+								<div>
+									<a onClick="javascript:CallPrint1('pPrint');" title="Распечатать проект"><img src="./src/print.png"></a>
+									<a href="javascript:void(0)" id="saveWord1" alt="Сохранить в word"><img src="./src/word.png"></a>
+								</div>
+							</div>
+						</div>
+						<br>
+						<!-- <p id="ews">Промежуточные </p> -->
+						<div id="buffer"> </div>
+					</div>
+					<div class="tab-pane container fade" id="home">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6">		 
+										<div class="form-group">
+											<label for="exampleFormControlSelect1">Укажите тип дома</label>
+											<select class="form-control no" id="exampleFormControlSelect1" size="3">
+												<option value="1" selected>Кирпич</option>
+												<option value="2">Панель</option>
+												<option value="3">Сталинка</option>
+											</select>
+										</div>
+
+										<div class="form-group right50">
+											<label for="exampleFormControlInput1">Ширина</label>
+											<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="width" placeholder="0" value="0" >
+										</div>
+
+										<div class="form-group right50">
+											<label for="exampleFormControlInput1">Высота</label>
+											<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="height" placeholder="0" value="0" >
+										</div>
+
+										<div class="border">
+											<label for="exampleFormControlSelect1" style="font-size: 15px;font-weight: 700;">Допы к заказу</label>
+											<div class="form-group">
+												<label for="exampleFormControlSelect1">Подьем на веревках</label>
+												<select class="form-control" id="upVerevki" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>
+											<div class="form-group">	
+												<label for="exampleFormControlSelect1">Москитка на алюминий</label>
+												<span class="litle">*количество в штуках</span>
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="moskitkaNaalyminii" placeholder="0" value="0" >
+											</div>
+
+											<div class="form-group">	
+												<label for="exampleFormControlSelect1">Москитка количество</label>
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="moskitkaKollvo" placeholder="0" value="0" >
+											</div>	
+
+											<div class="form-group">	
+												<label for="exampleFormControlSelect1">Уголок количество</label>
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="ugolKolvo" placeholder="0" value="0" >
+											</div>
+
+											<div class="form-group">	
+												<label for="exampleFormControlSelect1">Расширители количество</label>
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="rashiritelKOlvo" placeholder="0" value="0" >
+											</div>
+											<div class="form-group">	
+												<label for="exampleFormControlSelect1">Монтаж жалюзи</label>
+												<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="montazZalyzi" placeholder="0" value="0" >
+											</div>
+										</div>
+
+
+									</div>
+									<div class="col-md-6">
+
+										<div class="form-group">
+											<label for="exampleFormControlSelect2">Укажите тип изделия</label>
+											<select  class="form-control no" id="exampleFormControlSelect2" size="3">
+												<option  value="1" selected>Однушка</option>
+												<option  value="2">Двушка</option>
+												<option  value="3">Трешка</option>
+												<option  value="4">ББ</option>
+												<option  value="5">ББ чебурашка</option>
+												<option  value="6">БД</option>
+												<option  value="7">Дштульп</option>
+												<option  value="8">Рама ПВХ</option>
+												<option  value="9">Рама Алюминий</option>
+												<option  value="10">Эркер рама</option>
+												<option  value="11">Эркер окно</option>
+												<option  value="12">Повороты Алюминий</option>
+												<option  value="13">Повороты ПВХ</option>
+												<option  value="14">Нестандарт прямая ПВХ</option>
+												<option  value="15">Нестандарт прямая Алюминий</option>
+												<option  value="16">Нестандарт повороты ПВХ</option>
+												<option  value="17">Нестандарт повороты Алюминий</option>
+											</select>
+										</div>
+
+										<div class="form-group right50">
+											<label for="exampleFormControlInput1">Повороты</label>
+											<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="povoroti" placeholder="0" value="0" >
+										</div>
+
+										<div class="form-group right50">
+											<label for="exampleFormControlInput1">Ширина откосов</label>
+											<input type="text" onkeyup="return proverka(this);" onchange="return proverka(this);" class="form-control" id="widthOtkos" placeholder="0" value="0" >
+										</div>
+
+										<div class="border">
+											<label for="exampleFormControlSelect1" style="font-size: 15px;font-weight: 700;">Допы к изделию</label>
+											<div class="form-group">
+												<label for="exampleFormControlSelect1">Демонтаж с сохранением к кв м</label>
+												<select class="form-control" id="demonSsohtaneniem" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>										
+											<div class="form-group right50">
+												<label for="exampleFormControlSelect1">Пил м.п</label>
+												<select class="form-control" id="pilMP" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>										
+											<div class="form-group right50">
+												<label for="exampleFormControlSelect1">Гил м.п</label>
+												<select class="form-control" id="gilMP" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>										
+											<div class="form-group right50">
+												<label for="exampleFormControlSelect1">Псул м.п</label>
+												<select class="form-control" id="psulMP" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>										
+											<div class="form-group right50">
+												<label for="exampleFormControlSelect1">Каркас прямой</label>
+												<select class="form-control" id="karkasPramoi" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>			
+											<div class="form-group">
+												<label for="exampleFormControlSelect1">Каркас поворот</label>
+												<span class="litle">(считаеться по кол поворотов)</span>
+												<select class="form-control" id="karkasPovorot" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>			
+
+											<div class="form-group">
+												<label for="exampleFormControlSelect1">Отмазка</label>
+												<select class="form-control" id="Otmazka" size="1">
+													<option value="2">Нет</option>
+													<option value="1">Да</option>
+												</select>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="col-md-12">
+										<button onclick="sendq();" type="submit" name="order_submit" id="ras1" class="btn btn-primary sum">Рассчитать</button>
+										<button onclick="add();" type="submit" name="order_submit" id="add1" class="btn btn-primary add">Добавить изделие</button>
+										<p class="litle">*Enter мгновенный расчет и добавление выбранного изделия.</p>
+										<p class="litle">*Перед добавлением нового изделия не забудьте его рассчитать.</p>	
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-md-6">
+
+								<div id="print" class="form-group">
+									<div class="flex">
+										<label for="exampleFormControlInput1">Изделия</label>
+										<label id="clear" for="exampleFormControlInput1">Очистить таблицу X</label>
+									</div>
+									<div id="printer">
+										<div id="list" class="okno">
+
+										</div>
+									</div>	
+								</div>	
+
+								<div id="cont" class="cont">
+									<h4>
+										<span>Изделия монтаж = </span><span id="st2" style="font-weight: 600">0</span><br>
+										<span>Изделия откосы = </span><span id="st3" style="font-weight: 600">0</span><br>
+										<span>Изделия допы = </span><span id="st4" style="font-weight: 600">0</span><br>
+
+										<hr>
+
+										<span>Итоговая откосы = </span><span id="st5" style="font-weight: 600">0</span><br>
+										<span>Итоговая монтаж = </span><span id="st6" style="font-weight: 600">0</span><br>
+										<span>Итоговая допы = </span><span id="st7" style="font-weight: 600">0</span><br>
+
+										<hr>
+										<span>Допы к заказу = </span><span id="st10" style="font-weight: 600">0</span><br>
+
+										<hr>
+
+										<span>Итого заказ = </span><span id="st8" style="font-weight: 600">0</span>
+
+
+
+									</h4>
+									<div class="img">
+										<a onClick="javascript:CallPrint('print-content');" title="Распечатать проект"><img src="./src/print.png"></a>
+										<a href="javascript:void(0)" id="saveWord" alt="Сохранить в word"><img src="./src/word.png"></a>
+									</div>
+
+								</div>
+
+								<br>
+
+								<button id="backRaschet" type="submit" name="order_submit" class="btn btn-primary add">Вернутсья к расчетам</button>
+
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+
+
+					<div class="tab-pane container fade" id="menu2">...</div>
+
+				</div>
+			</div>	 	
+		</div>
+	</div>
+
+
+
+	<script src="./js/jquery.min.js"></script> 
+	<!-- <script src="https://code.jquery.com/jquery-2.2.4.js"></script> -->
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/FileSaver.js"></script>
+	<script src="./js/wordexport.js"></script> 
+	<script src="./js/logic.js"></script>
+	<script  src="./js/jquery.maskedinput.min.js"></script>
+</body>
+</html>
